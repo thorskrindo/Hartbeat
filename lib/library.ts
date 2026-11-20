@@ -165,3 +165,11 @@ export const TIERS = [
   { id: "facilitated", name: "With a facilitator", note: "A Hartbeat partner runs the workshops and forums with the team. Hartbeat measures the effect." }
 ] as const;
 export type TierId = (typeof TIERS)[number]["id"];
+
+/** Short quotes shown to a manager at the moment they start something. Each needs a checked source. */
+export const QUOTES = {
+  engagement: {
+    text: "Enthusiasm is the yeast that makes your hopes rise to the stars. Enthusiasm is the sparkle in your eyes, the swing in your gait, the grip of your hand, the irresistible surge of will and energy to execute your ideas.",
+    source: "Weigall, 1998, p. 2"
+  }
+} as const;

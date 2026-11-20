@@ -45,3 +45,9 @@ The three pulse items per survey are short Hartbeat versions inspired by these s
 ## Turnover
 
 Holtom, Mitchell, Lee & Inderrieden (2005): shocks, not slowly building dissatisfaction, start most voluntary leaving. Mitchell et al. (2001): job embeddedness predicts staying.
+
+## Quotes in the product
+
+| Where | Quote | Source | Checked |
+|---|---|---|---|
+| Motivation and ambition survey; growth and meaning initiatives | "Enthusiasm is the yeast that makes your hopes rise to the stars..." | Weigall (1998, p. 2), from Thor's reading | Full reference still to add |

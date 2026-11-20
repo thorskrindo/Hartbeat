@@ -117,7 +117,7 @@ td { padding: 11px 10px; border-top: 1px solid #F1EFEB; }
 .scroll { overflow-x: auto; }
 
 /* ---------- sheet (detail drawer) ---------- */
-.scrim { position: fixed; inset: 0; z-index: 30; display: flex; align-items: flex-end; justify-content: center; background: rgba(4,6,11,.55); }
+.scrim { position: fixed; inset: 0; z-index: 100; display: flex; align-items: flex-end; justify-content: center; background: rgba(4,6,11,.55); }
 .sheet { width: min(720px, 100%); max-height: 88vh; overflow-y: auto; background: #fff; color: var(--ink);
   border-radius: 30px 30px 0 0; padding: 14px 28px 32px; animation: up .5s cubic-bezier(.16,1,.3,1) both; }
 @keyframes up { from { transform: translateY(100%); } to { transform: none; } }
@@ -131,3 +131,14 @@ td { padding: 11px 10px; border-top: 1px solid #F1EFEB; }
 
 /* On phones the menu scrolls away with the page instead of covering it */
 @media (max-width: 700px) { .top { position: static; } .bar { padding: 12px 14px; } }
+
+/* ---------- quote card: a night-sky card with a slow aurora edge ---------- */
+.quote { flex: none; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 26px 28px 24px;
+  border-radius: var(--r); color: #F3F5FA; border: 1px solid rgba(255,255,255,.14);
+  background: radial-gradient(90% 120% at 100% 120%, rgba(70,240,150,.28), transparent 60%),
+              radial-gradient(70% 90% at 0% -20%, rgba(60,140,255,.30), transparent 60%), #0A1022;
+  box-shadow: 0 30px 80px -30px rgba(70,230,150,.45); }
+.quote blockquote { margin: 0; font-size: clamp(20px, 2.1vw, 26px); line-height: 1.35; letter-spacing: -.005em; }
+.quote blockquote::before { content: "\201C"; display: block; font-size: 64px; line-height: .6; color: #86B6FF; margin-bottom: 6px; }
+.quote figcaption { font-size: 15px; color: #A3ACBF; }
+.sheet .quote { margin-bottom: 4px; }

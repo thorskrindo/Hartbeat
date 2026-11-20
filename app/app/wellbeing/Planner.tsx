@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState, useTransition } from "react";
-import { INITIATIVE, INITIATIVES, PATHWAYS, PATTERNS, TIERS, type Initiative, type TierId } from "@/lib/library";
+import { INITIATIVE, INITIATIVES, PATHWAYS, PATTERNS, QUOTES, TIERS, type Initiative, type TierId } from "@/lib/library";
+import { QuoteCard } from "@/components/QuoteCard";
 import type { PathwayId, PatternId, TeamHealth } from "@/lib/types";
 import { DeptIcon, StatusPill } from "@/components/ui";
 import { startPlan } from "./actions";
@@ -64,6 +65,7 @@ export function Planner({ teams, initial }: { teams: TeamHealth[]; initial: stri
           </div>
         </div>
         <p className="sub" style={{ margin: 0 }}>{TIERS.find((t) => t.id === tier)!.note}</p>
+        {pattern.id === "stuck" && <div style={{ maxWidth: 820 }}><QuoteCard text={QUOTES.engagement.text} source={QUOTES.engagement.source} /></div>}
         <div className="grid">
           {rows.map(([id, a, b]) => {
             const it = INITIATIVE[id], P = PATHWAYS[it.path];
@@ -142,6 +144,7 @@ export function Planner({ teams, initial }: { teams: TeamHealth[]; initial: stri
               </div>
               <button onClick={() => setOpen(null)} aria-label="Close" style={{ flex: "none", width: 44, height: 44, border: 0, borderRadius: "50%", background: "#F3F2EF", fontSize: 18 }}>×</button>
             </div>
+            {(open.path === "growth" || open.path === "meaning") && <QuoteCard text={QUOTES.engagement.text} source={QUOTES.engagement.source} />}
             <div className="stack" style={{ gap: 10, padding: 16, borderRadius: 18, background: "#F6F8FD" }}>
               <span style={{ fontWeight: 700, color: "#1F5FD0", fontSize: 14 }}>Why it works</span>
               <div className="row" style={{ gap: 6, fontSize: 14 }}>{open.chain.map((c, k) => <span key={c}>{k > 0 && "→ "}{c}</span>)}</div>

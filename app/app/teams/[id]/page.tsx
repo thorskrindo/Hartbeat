@@ -4,7 +4,8 @@ import { Shell } from "@/components/Shell";
 import { TrendChart } from "@/components/TrendChart";
 import { DeptIcon, Ring, StatusPill } from "@/components/ui";
 import { getCtx, getHealth } from "@/lib/data";
-import { SURVEYS } from "@/lib/library";
+import { QUOTES, SURVEYS } from "@/lib/library";
+import { QuoteCard } from "@/components/QuoteCard";
 import { STATUS_TONE } from "@/lib/scoring";
 
 export default async function TeamPage({ params }: { params: Promise<{ id: string }> }) {
@@ -52,6 +53,7 @@ export default async function TeamPage({ params }: { params: Promise<{ id: strin
         </div>
         {survey && (
           <section id="survey" className="card stack rise" style={{ gap: 16, maxWidth: 820 }}>
+            {survey.id === "drive" && <QuoteCard text={QUOTES.engagement.text} source={QUOTES.engagement.source} />}
             <span className="label">Suggested survey</span>
             <h2 style={{ fontSize: 30 }}>{survey.name}</h2>
             <p style={{ margin: 0, color: "#3F4047" }}>{survey.what}</p>
